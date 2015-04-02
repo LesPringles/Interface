@@ -242,20 +242,16 @@ GtkWidget* CreateMenu(GtkWidget* pWindow)
 	GSList *pList2;
 	GSList *pListC;
 	char *color[] = {
-					"DARK BLUE",
-					"DARK GREEN",
-					"DARK CYAN",
-					"DARK RED",
-					"OCHER",
-					"LIGHT GREY",
-					"GREY",
+					"BLACK",
 					"BLUE",
 					"GREEN",
-					"CYAN",
-					"RED",
-					"MAGENTA",
 					"YELLOW",
-					"WHITE"
+					"PINK",
+					"PURPLE",
+					"RED",
+					"WHITE",
+					"GREY",
+					"SILVER"
 	};
 
 	/**** Création du menu ****/
@@ -380,7 +376,7 @@ GtkWidget* CreateMenu(GtkWidget* pWindow)
 	pListC = gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(pMenuItem));
 	g_signal_connect(G_OBJECT(pMenuItem), "activate", G_CALLBACK(OnRadio), NULL);
 
-	for(int i = 0; i < 14 ; i++)
+	for(int i = 1; i < 9 ; i++)
 	{
 	pMenuItem = gtk_radio_menu_item_new_with_label(pListC, color[i]);
 	gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), pMenuItem);
